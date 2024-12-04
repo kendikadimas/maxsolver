@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Matriks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Kalkulator Matriks</h1>
+
+    <div>
+      <button onclick="changeOrder(-1)">Decrease Order</button>
+      <button onclick="changeOrder(1)">Increase Order</button>
+      <span>Current Order: <span id="orderDisplay">3</span></span>
+    </div>
+
+    <div class="matrices">
+      <div>
+        <h3>Matriks A</h3>
+        <table id="matrixA">
+          <tbody>
+            <!-- Matriks A -->
+          </tbody>
+          <button onclick="transposeMatrixA()">Transpose</button>
+        </table>
+      </div>
+      <div>
+        <h3>Matriks B</h3>
+        <table id="matrixB">
+          <tbody>
+            <!-- Matriks B -->
+          </tbody>
+          <button onclick="transposeMatrixB()">Transpose</button>
+        </table>
+      </div>
+    </div>
+    <div class="operations">
+      <button onclick="addMatrices()">Tambah (+)</button>
+      <button onclick="subtractMatrices()">Kurangi (-)</button>
+      <button onclick="multiplyMatrices()">Kali (×)</button>
+      <div>
+        <button onclick="resetAllMatrices()">Reset Matrices</button>
+      </div>
+      
+    </div>
+    <div id="result">
+      <h3>Hasil</h3>
+      <table id="resultMatrix">
+        <tbody>
+          <!-- Matriks Hasil -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
