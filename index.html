@@ -4,16 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kalkulator Matriks</title>
+  <link rel="stylesheet" href="">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="all-container">
+
+  <div class="sidebar">
+    <div class="title">
+      <h1>Kalkulator Matriks</h1>
+      <p>Kalkulator Matriks ini dapat menghitung berbagai operasi matriks seperti penjumlahan, pengurangan, perkalian, pembagian, transpose, determinan dan juga invers.</p>
+    </div>
+    <div class="tutor">
+      <h2>Panduan Penggunaan</h2>
+      <p>1.  Pilih ordo matriks yang diinginkan, anda dapat menambahkan atau mengurangi ordo. <br>
+        2.  Isi matriks A dan matriks B sesuai ordo yang ditentukan. <br>
+        3. Pilih operasi yang ingin dilakukan. <br>
+        4. Klik tombol "Hitung" untuk menghitung hasil operasi matriks.
+      </p>
+    </div>
+    <div class="anggota">
+      <h2>Anggota Kelompok</h2>
+      <p>Sellyjuan Alya Rosalina - H1D023006 <br>
+        Fatimah Nurmawati - H1D023019 <br>
+        Aisyah Syifa Karima - H1D023043 <br>
+        Haniel Wijanarko - H1D023052 <br>
+        Dimas Kendika Fazrulfalah - H1D023083 <br>
+        </p>
+    </div>
+  </div>
+
   <div class="container">
     <h1>Kalkulator Matriks</h1>
 
     <div>
-      <button onclick="changeOrder(-1)">Decrease Order</button>
-      <button onclick="changeOrder(1)">Increase Order</button>
-      <span>Current Order: <span id="orderDisplay">3</span></span>
+      <button onclick="changeOrder(-1) " class="btn">Kurangi Ordo</button>
+      <button onclick="changeOrder(1)" class="btn">Tambah Ordo</button>
+      <span>Jumlah Ordo: <span id="orderDisplay">3</span></span>
     </div>
 
     <div class="matrices">
@@ -23,8 +50,20 @@
           <tbody>
             <!-- Matriks A -->
           </tbody>
-          <button onclick="transposeMatrixA()">Transpose</button>
         </table>
+        <select name="operasi" id="operationsA" class="dropdown">
+          <option value="" disabled selected>Pilih Operasi</option>
+          <option value="transpose">
+            <button onclick="transposeMatrixA()" class="btn">Transpose</button>
+          </option>
+          <option value="inverse">
+            <button onclick="calculateInverseA()">Invers Matriks A</button>
+          </option>
+          <option value="determinant">
+            <button onclick="calculateDeterminantA()">Determinan Matriks A</button>
+          </option>
+        </select>
+        
       </div>
       <div>
         <h3>Matriks B</h3>
@@ -32,19 +71,32 @@
           <tbody>
             <!-- Matriks B -->
           </tbody>
-          <button onclick="transposeMatrixB()">Transpose</button>
         </table>
+        <select name="operasi" id="operationsB" class="dropdown">
+          <option value="" disabled selected>Pilih Operasi</option>
+          <option value="transpose">
+            <button onclick="transposeMatrixB()" class="btn">Transpose</button>
+          </option>
+          <option value="inverse">
+            <button onclick="calculateInverseB()">Invers Matriks B</button>
+          </option>
+          <option value="determinant">
+            <button onclick="calculateDeterminantB()">Determinan Matriks B</button>
+          </option>
+        </select>
       </div>
     </div>
-    <div class="operations">
-      <button onclick="addMatrices()">Tambah (+)</button>
-      <button onclick="subtractMatrices()">Kurangi (-)</button>
-      <button onclick="multiplyMatrices()">Kali (×)</button>
-      <div>
-        <button onclick="resetAllMatrices()">Reset Matrices</button>
+      <div class="operations">
+        <button onclick="addMatrices()">Tambah (+)</button>
+        <button onclick="subtractMatrices()">Kurangi (-)</button>
+        <button onclick="multiplyMatrices()">Kali (×)</button>
+        <div>
+          <button onclick="resetAllMatrices()">Reset Matrices</button>
+        </div>
       </div>
       
-    </div>
+      
+    
     <div id="result">
       <h3>Hasil</h3>
       <table id="resultMatrix">
@@ -52,8 +104,10 @@
           <!-- Matriks Hasil -->
         </tbody>
       </table>
+      </div>
     </div>
   </div>
+</div>
   <script src="script.js"></script>
 </body>
 </html>
