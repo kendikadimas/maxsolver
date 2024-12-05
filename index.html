@@ -11,16 +11,17 @@
   <div class="all-container">
 
   <div class="sidebar">
+    <h1>MAX SOLVER</h1>
+
     <div class="title">
-      <h1>Kalkulator Matriks</h1>
-      <p>Kalkulator Matriks ini dapat menghitung berbagai operasi matriks seperti penjumlahan, pengurangan, perkalian, pembagian, transpose, determinan dan juga invers.</p>
+      <h1>Apa Itu Max Solver?</h1>
+      <p>Merupakan sebuah Kalkulator Matriks yang dapat menghitung berbagai operasi matriks seperti penjumlahan, pengurangan, perkalian, transpose, determinan dan juga invers.</p>
     </div>
     <div class="tutor">
       <h2>Panduan Penggunaan</h2>
       <p>1.  Pilih ordo matriks yang diinginkan, anda dapat menambahkan atau mengurangi ordo. <br>
         2.  Isi matriks A dan matriks B sesuai ordo yang ditentukan. <br>
         3. Pilih operasi yang ingin dilakukan. <br>
-        4. Klik tombol "Hitung" untuk menghitung hasil operasi matriks.
       </p>
     </div>
     <div class="anggota">
@@ -35,7 +36,7 @@
   </div>
 
   <div class="container">
-    <h1>Kalkulator Matriks</h1>
+    <h1 style="color: white ; background-color: #0056b3; width: fit-content; margin: auto; margin-bottom: 40px; margin-top: 40px;">MAX SOLVER</h1>
 
     <div>
       <button onclick="changeOrder(-1) " class="btn">Kurangi Ordo</button>
@@ -63,7 +64,7 @@
             <button onclick="calculateDeterminantA()">Determinan Matriks A</button>
           </option>
         </select>
-        
+        <div id="determinantA" class="determinant-result"></div>
       </div>
       <div>
         <h3>Matriks B</h3>
@@ -84,6 +85,7 @@
             <button onclick="calculateDeterminantB()">Determinan Matriks B</button>
           </option>
         </select>
+        <div id="determinantB" class="determinant-result"></div>
       </div>
     </div>
       <div class="operations">
@@ -91,7 +93,7 @@
         <button onclick="subtractMatrices()">Kurangi (-)</button>
         <button onclick="multiplyMatrices()">Kali (×)</button>
         <div>
-          <button onclick="resetAllMatrices()">Reset Matrices</button>
+          <button onclick="resetAllMatrices()">Reset Matriks</button>
         </div>
       </div>
       

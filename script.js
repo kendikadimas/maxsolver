@@ -164,8 +164,10 @@ function calculateDeterminantA() {
   if (!A) return; // Hentikan jika input tidak valid
 
   const det = determinant(A);
-  alert(`Determinan Matriks A adalah: ${det}`);
+  const determinantDiv = document.getElementById('determinantA');
+  determinantDiv.textContent = `Determinan Matriks A: ${det}`;
 }
+
 
 // Fungsi untuk menghitung invers dari Matriks A
 function calculateInverseA() {
@@ -175,7 +177,6 @@ function calculateInverseA() {
   const inv = inverse(A);
   if (inv) {
     displayResult(inv);
-    alert('Invers Matriks A berhasil dihitung. Hasilnya ditampilkan.');
   }
 }
 
@@ -185,8 +186,10 @@ function calculateDeterminantB() {
   if (!B) return; // Hentikan jika input tidak valid
 
   const det = determinant(B);
-  alert(`Determinan Matriks B adalah: ${det}`);
+  const determinantDiv = document.getElementById('determinantB');
+  determinantDiv.textContent = `Determinan Matriks B: ${det}`;
 }
+
 
 // Fungsi untuk menghitung invers dari Matriks B
 function calculateInverseB() {
@@ -196,7 +199,6 @@ function calculateInverseB() {
   const inv = inverse(B);
   if (inv) {
     displayResult(inv);
-    alert('Invers Matriks B berhasil dihitung. Hasilnya ditampilkan.');
   }
 }
 
@@ -304,6 +306,11 @@ function resetMatrix(tableId) {
   const inputs = document.querySelectorAll(`#${tableId} input`);
   inputs.forEach((input) => {
     input.value = ''; // Hapus nilai input
+  const determinantContentA = document.getElementById('determinantA');
+  const determinantContentB = document.getElementById('determinantB');
+  determinantContentA.textContent = '';
+  determinantContentB.textContent = '';
+
   });
 }
 
