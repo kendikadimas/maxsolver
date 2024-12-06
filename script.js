@@ -22,12 +22,12 @@ function createMatrixInputs(tableId) {
 function getMatrix(tableId) {
   const inputs = document.querySelectorAll(`#${tableId} input`);
   const matrix = [];
-  let isValid = true; // Flag untuk mengecek validitas input
+  let isValid = true; // untuk mengecek validitas input
 
   inputs.forEach((input, index) => {
     const row = Math.floor(index / matrixOrder);
     if (!matrix[row]) matrix[row] = [];
-    const value = input.value.trim(); // Hapus spasi berlebih
+    const value = input.value.trim(); // Hapus jika ada spasi berlebih
 
     if (value === '') {
       isValid = false; // Tandai jika ada input kosong
@@ -68,6 +68,7 @@ function addMatrices() {
   displayResult(result);
 }
 
+// Operasi pengurangan matriks
 function subtractMatrices() {
   const A = getMatrix('matrixA');
   const B = getMatrix('matrixB');
@@ -77,6 +78,7 @@ function subtractMatrices() {
   displayResult(result);
 }
 
+// Operasi perkalian matriks
 function multiplyMatrices() {
   const A = getMatrix('matrixA');
   const B = getMatrix('matrixB');
@@ -168,7 +170,6 @@ function calculateDeterminantA() {
   determinantDiv.textContent = `Determinan Matriks A: ${det}`;
 }
 
-
 // Fungsi untuk menghitung invers dari Matriks A
 function calculateInverseA() {
   const A = getMatrix('matrixA');
@@ -190,7 +191,6 @@ function calculateDeterminantB() {
   determinantDiv.textContent = `Determinan Matriks B: ${det}`;
 }
 
-
 // Fungsi untuk menghitung invers dari Matriks B
 function calculateInverseB() {
   const B = getMatrix('matrixB');
@@ -202,8 +202,6 @@ function calculateInverseB() {
   }
 }
 
-
-
 // Mengubah ordo matriks
 function changeOrder(increment) {
   const maxOrder = 8; // Batas maksimal ordo matriks
@@ -213,7 +211,6 @@ function changeOrder(increment) {
 
   document.getElementById('orderDisplay').textContent = matrixOrder;
 }
-
 
 
 // Menampilkan hasil transpose matriks
@@ -319,9 +316,6 @@ function resetAllMatrices() {
   resetMatrix('matrixB');
   document.getElementById('resultMatrix').querySelector('tbody').innerHTML = ''; // Kosongkan tabel hasil
 }
-
-
-
 
 // Inisialisasi
 document.addEventListener('DOMContentLoaded', () => {
